@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: Pokemon
+
+
+  cache:
+    cache-names:
+      - pokemon
+
+server:
+  port: 8080

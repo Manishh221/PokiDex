@@ -3,6 +3,7 @@ package com.poki.app.pokemon.client;
 import com.poki.app.pokemon.dto.response.PokemonApiResponse;
 import com.poki.app.pokemon.exception.PokemonNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -11,8 +12,8 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class PokeApiClient {
 
-    private static final String BASE_URL =
-            "https://pokeapi.co/api/v2/pokemon/";
+    @Value("${pokemon.base-url}")
+    private String BASE_URL;
 
     private final RestTemplate restTemplate;
 
@@ -35,8 +36,7 @@ public class PokeApiClient {
         } catch (Exception ex) {
 
             throw new RuntimeException(
-                    "Failed to fetch pokemon details",
-                    ex
+                    "Failed to fetch pokemon details", ex
             );
         }
     }

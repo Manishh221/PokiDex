@@ -9,23 +9,30 @@ import com.poki.app.pokemon.dto.vendor.TypeInfo;
 import com.poki.app.pokemon.dto.vendor.TypeWrapper;
 import com.poki.app.pokemon.service.PokemonService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PokemonServiceImpl implements PokemonService {
 
     private final PokeApiClient pokeApiClient;
 
     @Override
+    @Cacheable(value = "pokemon", key = "#name.toLowerCase()")
     public PokemonResponseDto getPokemon(String name) {
 
-        PokemonApiResponse pokemon =
-                pokeApiClient.fetchPokemon(name);
+        log.info("Fetching pokemon from external API: {}", name);
 
-        return mapToResponse(pokemon);
+        PokemonApiResponse response = pokeApiClient.fetchPokemon(name);
+
+        log.info("Successfully fetched pokemon: {}", name);
+
+        return mapToResponse(response);
     }
 
     private PokemonResponseDto mapToResponse(
@@ -61,6 +68,7 @@ public class PokemonServiceImpl implements PokemonService {
                 .types(types)
                 .abilities(abilities)
                 .stats(pokemon.getStats())
+                .source("External_API")
                 .build();
     }
 }

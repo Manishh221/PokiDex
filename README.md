@@ -83,17 +83,57 @@ GET /api/pokemon/pikachu
 
 ```json
 {
-  "name": "pikachu",
-  "height": 4,
-  "weight": 60,
-  "baseExperience": 112,
-  "types": [
-    "electric"
-  ],
-  "abilities": [
-    "static",
-    "lightning-rod"
-  ]
+    "abilities": [
+        "static",
+        "lightning-rod"
+    ],
+    "baseExperience": 112,
+    "height": 4,
+    "id": 25,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "name": "pikachu",
+    "stats": [
+        {
+            "base_stat": 35,
+            "stat": {
+                "name": "hp"
+            }
+        },
+        {
+            "base_stat": 55,
+            "stat": {
+                "name": "attack"
+            }
+        },
+        {
+            "base_stat": 40,
+            "stat": {
+                "name": "defense"
+            }
+        },
+        {
+            "base_stat": 50,
+            "stat": {
+                "name": "special-attack"
+            }
+        },
+        {
+            "base_stat": 50,
+            "stat": {
+                "name": "special-defense"
+            }
+        },
+        {
+            "base_stat": 90,
+            "stat": {
+                "name": "speed"
+            }
+        }
+    ],
+    "types": [
+        "electric"
+    ],
+    "weight": 60
 }
 ```
 

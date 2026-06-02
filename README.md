@@ -190,7 +190,7 @@ The application handles common failure scenarios gracefully.
 ### Clone Repository
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone git@github.com:Manishh221/PokiDex.git
 ```
 
 ### Navigate to Project

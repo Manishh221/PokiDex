@@ -68,7 +68,6 @@ public class PokemonServiceImpl implements PokemonService {
                 .types(types)
                 .abilities(abilities)
                 .stats(pokemon.getStats())
-                .source("External_API")
                 .build();
     }
 }

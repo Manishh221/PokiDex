@@ -26,5 +26,4 @@ public class PokemonResponseDto {
 
   private List<String> abilities;
 
-  private String source;
 }

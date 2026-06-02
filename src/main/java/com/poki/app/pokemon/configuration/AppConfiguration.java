@@ -1,6 +1,5 @@
 package com.poki.app.pokemon.configuration;
 
-import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
@@ -11,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 
 @Configuration
 public class AppConfiguration {
@@ -31,9 +30,8 @@ public class AppConfiguration {
 
         registry
             .addMapping("/**")
-            .allowedOrigins("http://127.0.0.1:5500")
-            .allowedMethods("GET")
-            .allowCredentials(true);
+            .allowedOrigins("http://localhost:5173/")
+            .allowedMethods("GET");
       }
     };
   }

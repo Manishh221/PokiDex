@@ -2,11 +2,6 @@ spring:
   application:
     name: Pokemon
 
-
-  cache:
-    cache-names:
-      - pokemon
-
 pokemon:
   base-url: https://pokeapi.co/api/v2/pokemon/
 

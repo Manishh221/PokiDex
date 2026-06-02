@@ -250,10 +250,8 @@ src/main/java
 ├── service
 ├── client
 ├── dto
-├── config
+├── configuration
 ├── exception
-├── cache
-└── mapper
 ```
 
 ---

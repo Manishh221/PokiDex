@@ -225,7 +225,7 @@ Frontend application is maintained separately.
 Repository Link:
 
 ```text
-<FRONTEND_REPOSITORY_LINK>
+https://github.com/Manishh221/PokiDex-ui
 ```
 
 ---

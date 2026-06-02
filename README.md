@@ -25,7 +25,7 @@ A Spring Boot REST API developed as part of the **Finfactor Technologies Coding 
 ### Backend
 
 * Java 21
-* Spring Boot 3
+* Spring Boot 4
 * Spring Web
 * Spring Cache
 * Caffeine Cache
